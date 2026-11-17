@@ -1,18 +1,18 @@
 package net.osgg.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "estudiantes")
 public class Estudiante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -33,6 +33,14 @@ public class Estudiante {
 
     }
 
+    public Estudiante(int id, String nombre, String apellido, String correo, String carrera) {
+        this.id = id;
+    	this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.carrera = carrera;
+    }	
+	
     public Estudiante(String nombre, String apellido, String correo, String carrera) {
         this.nombre = nombre;
         this.apellido = apellido;
